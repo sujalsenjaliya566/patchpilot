@@ -1,0 +1,16 @@
+[model]
+provider = "ollama"          # "ollama" | "vllm"
+name     = "gemma2:9b"
+base_url = "http://localhost:11434"
+timeout  = 120               # seconds
+
+[agent]
+max_turns      = 5
+sandbox        = true        # use temp git worktree for patching
+test_command   = "pytest"
+test_args      = ["-x", "--tb=short"]
+test_timeout   = 120         # seconds
+
+[output]
+report_path = "patchpilot_report.json"
+verbose     = false
